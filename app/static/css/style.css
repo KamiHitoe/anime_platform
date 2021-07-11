@@ -12,3 +12,7 @@ header img {
     height: auto;
 }
 
+#app ul {
+    list-style: none;
+}
+
