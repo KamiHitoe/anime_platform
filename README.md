@@ -1,12 +1,22 @@
 # anime_platform
 
-## 必要要素
+## To need
 
 - V: html/css
+- T: wtforms
 - C: python/flask/twitterAPI
 - M: postgreSQL
 - I: heroku/docker
 
+## To learn
 
+- Server Side
+- - docker
+- Frontend
+- - css flexbox
+- - css animetion
 
+## Learn more
+- NGNIX
+- bootstrap
 
