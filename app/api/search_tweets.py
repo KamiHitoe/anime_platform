@@ -20,7 +20,7 @@ url = "https://api.twitter.com/1.1/search/tweets.json?tweet_mode=extended"
 query = '(#tanmoshi OR #たんもし) AND -filter:retweets AND -filter:replies -#AniList'
 params = {
           'q': query,
-          'count': 5,
+          'count': 50,
           'lang': 'en',
           }
 
@@ -29,16 +29,16 @@ res = twitter.get(url, params=params)
 timelines = json.loads(res.text)
 # pprint(timelines)
 for line in timelines['statuses']:
-	print(line['created_at'])
-	print(line['user']['name'])
-	print(line['user']['screen_name'])
-	print(line['user']['profile_image_url'])
+	print('created_at:', line['created_at'])
+	print('username:', line['user']['name'])
+	print('@{}'.format(line['user']['screen_name']))
+	print('profile_img:', line['user']['profile_image_url'])
 	print(line['full_text'])
 	print('\n')
 	try:
 		medias = line['extended_entities']['media']
 		for media in medias:
-			print(media['media_url'])
+			print('imgs:', media['media_url'])
 	except:
 		pass
 	print('----------------')
