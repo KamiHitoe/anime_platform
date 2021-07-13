@@ -11,10 +11,10 @@
 ## To learn
 
 - Server Side
-- - docker
+    - docker
 - Frontend
-- - css flexbox
-- - css animetion
+    - css flexbox
+    - css animetion
 
 ## Learn more
 - NGNIX
