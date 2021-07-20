@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>AnimePF</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Hello, AnimePF !</h1>
+        
+        <img src="../static/imgs/violet_free01.jpg">
+    </header>
+
+    <nav>something</nav>
+    
+    <table>
+        <thead>
+            <tr>
+                <th >Id</th>
+                <th >Name</th>
+                <th >EMail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="../static/js/main.js"></script>
+</body>
+
+
+
+</html>
