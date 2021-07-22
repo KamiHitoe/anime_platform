@@ -24,21 +24,25 @@ def get_tweets(query, count):
 	res = twitter.get(url, params=params)
 	# json形式でloadしないと認識できない
 	timelines = json.loads(res.text)
-	# pprint(timelines)
+	tweets_dic_list = []
 	for line in timelines['statuses']:
-		print('created_at:', line['created_at'])
-		print('user_name:', line['user']['name'])
-		print('@{}'.format(line['user']['screen_name']))
-		print('profile_img:', line['user']['profile_image_url'])
-		print(line['full_text'])
-		print('\n')
+		tweets_dic = {}
+		tweets_dic['created_at'] = line['created_at']
+		tweets_dic['user_name'] = line['user']['name']
+		tweets_dic['screen_name'] = '@'+line['user']['screen_name']
+		tweets_dic['profile_img'] = line['user']['profile_image_url']
+		tweets_dic['full_text'] = line['full_text']
+		media_list = []
 		try:
 			medias = line['extended_entities']['media']
 			for media in medias:
-				print('imgs:', media['media_url'])
+				media_list.append(media['media_url'])
 		except:
 			pass
-		print('----------------')
+		tweets_dic['imgs'] = media_list
+		tweets_dic_list.append(tweets_dic)
+	print(tweets_dic_list)
+	return tweets_dic_list
 
 # get_tweets(query=query, count=3)
 

@@ -5,28 +5,18 @@ from app import db
 
 # db.create_all()
 
-# tweets = Tweets(
-#     created_at='2021-07-21 02:00:00',
-#     user_name='MUSE Malaysia & Brunei',
-#     screen_name='@tanteiwamou_',
-#     profile_img='http://pbs.twimg.com/profile_images/1380093778707447808/Tr79Gu--_normal.jpg',
-#     full_text='''Ilustrasi special untuk commemorate Episode 3 《The Detective is Already Dead》
-#     Source : @tanteiwamou_
-#     Setiap Ahad 22:00 PM Youtube
-
-#     (BM)
-#     https://t.co/XGeGPKSik9
-#     (ENG)
-#     https://t.co/PD0UCUJ1vW
-#     (Chinese)
-#     https://t.co/cCTDXKXZCZ
-
-#     #たんもし #TheDetectiveIsAlreadyDead #musemalaysia https://t.co/GSK67q5dzT''',
-# )
-# with db.session.begin(subtransactions=True):
-#     db.session.add(tweets)
-# db.session.commit()
-
 query = '(#tanmoshi OR #たんもし) AND -filter:retweets AND -filter:replies -#AniList'
-get_tweets(query=query, count=3)
+tweets_dic_list = get_tweets(query=query, count=10)
+for tweets_dic in tweets_dic_list:
+    tweet = Tweets(
+        tweets_dic['created_at'],
+        tweets_dic['user_name'],
+        tweets_dic['screen_name'],
+        tweets_dic['profile_img'],
+        tweets_dic['full_text'],
+    )
+    with db.session.begin(subtransactions=True):
+        db.session.add(tweet)
+    db.session.commit()
+
 
