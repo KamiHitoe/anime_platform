@@ -19,17 +19,23 @@
     <table>
         <thead>
             <tr>
-                <th >Id</th>
-                <th >Name</th>
-                <th >EMail</th>
+                <th >id</th>
+                <th >created_at</th>
+                <th >user_name</th>
+                <th >screen_name</th>
+                <th >profile_img</th>
+                <th >full_text</th>
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for tweet in tweets %}
                 <tr>
-                    <td>{{user.id}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
+                    <td>{{tweet.id}}</td>
+                    <td>{{tweet.created_at}}</td>
+                    <td>{{tweet.user_name}}</td>
+                    <td>{{tweet.screen_name}}</td>
+                    <td>{{tweet.profile_img}}</td>
+                    <td>{{tweet.full_text}}</td>
                 </tr>
             {% endfor %}
         </tbody>
