@@ -29,6 +29,9 @@
             <div class="tw_created">
                 <p>2021/07/05 00:30:25</p>
             </div>
+            <div class="tw_imgs">
+                <img class="tw_img" src="../static/imgs/violet_free01.jpg">
+            </div>
         </div>
         
 
@@ -43,6 +46,20 @@
                 </div>
                 <div class="tw_created">
                     <p>{{tweet.created_at}}</p>
+                </div>
+                <div class="tw_imgs">
+                    {% if tweet.img1 %}
+                        <img class="tw_img" src="{{tweet.img1}}">
+                    {% endif %}
+                    {% if tweet.img2 %}
+                        <img class="tw_img" src="{{tweet.img2}}">
+                    {% endif %}
+                    {% if tweet.img3 %}
+                        <img class="tw_img" src="{{tweet.img3}}">
+                    {% endif %}
+                    {% if tweet.img4 %}
+                        <img class="tw_img" src="{{tweet.img4}}">
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
