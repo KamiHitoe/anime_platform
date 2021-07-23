@@ -1,4 +1,5 @@
 
+# import config
 import api.config as config
 import json
 import datetime, time, sys
@@ -44,6 +45,7 @@ def get_tweets(query, count):
 	print(tweets_dic_list)
 	return tweets_dic_list
 
+# query = '(#tanmoshi OR #たんもし) AND -filter:retweets AND -filter:replies -#AniList'
 # get_tweets(query=query, count=3)
 
 
