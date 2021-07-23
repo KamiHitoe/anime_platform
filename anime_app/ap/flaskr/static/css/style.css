@@ -7,12 +7,28 @@ header h1 {
     color: blueviolet;
 }
 
-header img {
+nav {
+    margin-bottom: 20px;
+}
+
+.container .title-img {
     width: 1000px;
     height: auto;
 }
 
-#app ul {
-    list-style: none;
+.tweets {
+    text-align: center;
+    margin: 20px 100px;
+    border-bottom: solid orange;
 }
+
+.tweets .tw_icon_name {
+    text-align: left;
+}
+
+.tweets .tw_created {
+    text-align: right;
+}
+
+
 

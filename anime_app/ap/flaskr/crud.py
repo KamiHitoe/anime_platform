@@ -6,7 +6,7 @@ from app import db
 # db.create_all()
 
 query = '(#tanmoshi OR #たんもし) AND -filter:retweets AND -filter:replies -#AniList'
-tweets_dic_list = get_tweets(query=query, count=10)
+tweets_dic_list = get_tweets(query=query, count=100)
 for tweets_dic in tweets_dic_list:
     tweet = Tweets(
         tweets_dic['created_at'],
